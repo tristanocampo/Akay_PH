@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --app-shell: #e5e7ef;
+  --app-bg: #f4f6fb;
+  --ink-900: #1c2d45;
+  --ink-500: #7b8293;
+  --brand-blue: #0f57c8;
+  --line: #d7def0;
+  --card-bg: #f8fbff;
+  --card-line: #cbdaf3;
+  --danger-soft: #ffecee;
+  --danger-line: #f4c4ca;
+  --danger-strong: #c6282e;
+  --danger-text: #b4383d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background:
+    radial-gradient(circle at 0% -10%, #fbfcff 0%, transparent 35%),
+    radial-gradient(circle at 100% 10%, #edf3ff 0%, transparent 28%),
+    var(--app-shell);
+}
