@@ -3,7 +3,11 @@ import EmergencyBanner from './EmergencyBanner'
 import AppTopBar from './AppTopBar'
 import { categories } from '../data/categories'
 
-function HomeScreen() {
+type HomeScreenProps = {
+  onCategorySelect: (categoryId: string) => void
+}
+
+function HomeScreen({ onCategorySelect }: HomeScreenProps) {
   return (
     <main className="min-h-screen bg-(--app-shell) px-0 py-0 text-(--ink-900)">
       <section className="mx-auto min-h-dvh max-w-[430px] overflow-hidden border-x border-(--line) bg-(--app-bg) shadow-[0_8px_30px_rgba(21,27,39,0.07)]">
@@ -17,10 +21,10 @@ function HomeScreen() {
 
           <h3 className="mt-8 text-[clamp(1.9rem,7.8vw,3rem)] font-extrabold tracking-[-0.01em] text-(--ink-900)">Categories</h3>
 
-          <ul className="mt-4 grid grid-cols-2 gap-3.5 sm:mt-5 sm:gap-4">
+          <ul className="mt-4 grid grid-cols-2 items-stretch gap-3.5 sm:mt-5 sm:gap-4">
             {categories.map((item) => (
-              <li key={item.id}>
-                <CategoryCard item={item} />
+              <li key={item.id} className="h-full">
+                <CategoryCard item={item} onClick={item.id === 'cough' ? () => onCategorySelect(item.id) : undefined} />
               </li>
             ))}
           </ul>

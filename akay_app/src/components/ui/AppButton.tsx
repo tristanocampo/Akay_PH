@@ -1,7 +1,7 @@
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 type AppButtonProps = {
-  children: string
+  children: ReactNode
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 function AppButton({ children, className = '', type = 'button', ...props }: AppButtonProps) {
